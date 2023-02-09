@@ -92,7 +92,7 @@ const App = () => {
         // Navigate by id
         window.location.href =
           "https://0jhk0v-3000.preview.csb.app/" + e.target.data.id;
-        alert(e.target.data.name);
+        alert(e.target.data.name + " " + e.target.data.lastName);
       };
     } else {
       alert("Please give notification permission");
