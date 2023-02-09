@@ -81,10 +81,15 @@ const App = () => {
         body: "The leader",
         icon: "https://avatars.githubusercontent.com/u/97792702?v=4    auto=compress&cs=tinysrgb&dpr=1&w=500",
         dir: "ltr",
+        image: "https://wallpaperaccess.com/full/3225964.jpg",
+        data: { id: 1, name: "Thameem", lastName: "ansari" },
       };
       const newNotification = new Notification("Thameem ansari!", options);
       setNotification(newNotification);
       setShowNotification(true);
+      newNotification.onclick = (e) => {
+        alert(e.target.data.name);
+      };
     } else {
       alert("Please give notification permission");
     }
