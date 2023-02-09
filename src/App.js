@@ -87,7 +87,11 @@ const App = () => {
       const newNotification = new Notification("Thameem ansari!", options);
       setNotification(newNotification);
       setShowNotification(true);
+      //Navigation
       newNotification.onclick = (e) => {
+        // Navigate by id
+        window.location.href =
+          "https://0jhk0v-3000.preview.csb.app/" + e.target.data.id;
         alert(e.target.data.name);
       };
     } else {
