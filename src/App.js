@@ -77,16 +77,14 @@ const App = () => {
 
   const handleNewNotification = () => {
     if (window.Notification && Notification.permission === "granted") {
-      setInterval(() => {
-        var options = {
-          body: "The leader",
-          icon: "https://avatars.githubusercontent.com/u/97792702?v=4    auto=compress&cs=tinysrgb&dpr=1&w=500",
-          dir: "ltr",
-        };
-        const newNotification = new Notification("Thameem ansari!", options);
-        setNotification(newNotification);
-        setShowNotification(true);
-      }, 5000);
+      var options = {
+        body: "The leader",
+        icon: "https://avatars.githubusercontent.com/u/97792702?v=4    auto=compress&cs=tinysrgb&dpr=1&w=500",
+        dir: "ltr",
+      };
+      const newNotification = new Notification("Thameem ansari!", options);
+      setNotification(newNotification);
+      setShowNotification(true);
     } else {
       alert("Please give notification permission");
     }
