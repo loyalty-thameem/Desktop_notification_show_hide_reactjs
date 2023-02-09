@@ -60,7 +60,6 @@ const App = () => {
       });
     }
   };
-  console.log("Hello");
 
   const handleHideNotification = () => {
     notification.close();
