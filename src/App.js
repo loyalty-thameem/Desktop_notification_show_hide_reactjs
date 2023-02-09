@@ -44,7 +44,7 @@ const App = () => {
   const handleShowNotification = () => {
     if (window.Notification && Notification.permission === "granted") {
       const newNotification = new Notification("Hello World!", {
-        body: "This is a notification created using React"
+        body: "This is a notification created using React",
       });
       setNotification(newNotification);
       setShowNotification(true);
@@ -52,7 +52,7 @@ const App = () => {
       Notification.requestPermission().then((permission) => {
         if (permission === "granted") {
           const newNotification = new Notification("Hello World!", {
-            body: "This is a notification created using React"
+            body: "This is a notification created using React",
           });
           setNotification(newNotification);
           setShowNotification(true);
@@ -60,6 +60,7 @@ const App = () => {
       });
     }
   };
+  console.log("Hello");
 
   const handleHideNotification = () => {
     notification.close();
