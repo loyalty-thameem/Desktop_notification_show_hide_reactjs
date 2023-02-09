@@ -49,7 +49,7 @@ const App = () => {
         icon: "https://avatars.githubusercontent.com/u/97792702?v=4    auto=compress&cs=tinysrgb&dpr=1&w=500",
         dir: "ltr",
       };
-      const newNotification = new Notification("Hello World!", options);
+      const newNotification = new Notification("Thameem ansari!", options);
       setNotification(newNotification);
       setShowNotification(true);
     } else if (window.Notification && Notification.permission !== "denied") {
@@ -60,11 +60,13 @@ const App = () => {
           dir: "rtl",
         };
         if (permission === "granted") {
-          const newNotification = new Notification("Hello World!", options);
+          const newNotification = new Notification("Thameem ansari!", options);
           setNotification(newNotification);
           setShowNotification(true);
         }
       });
+    } else {
+      alert("Please give notification permission");
     }
   };
 
