@@ -40,20 +40,27 @@ import React, { useState } from "react";
 const App = () => {
   const [showNotification, setShowNotification] = useState(false);
   const [notification, setNotification] = useState(null);
-
+  console.log("showNotification", showNotification);
+  console.log("notification", notification);
   const handleShowNotification = () => {
     if (window.Notification && Notification.permission === "granted") {
-      const newNotification = new Notification("Hello World!", {
-        body: "This is a notification created using React",
-      });
+      var options = {
+        body: "The leader",
+        icon: "https://avatars.githubusercontent.com/u/97792702?v=4    auto=compress&cs=tinysrgb&dpr=1&w=500",
+        dir: "ltr",
+      };
+      const newNotification = new Notification("Hello World!", options);
       setNotification(newNotification);
       setShowNotification(true);
     } else if (window.Notification && Notification.permission !== "denied") {
       Notification.requestPermission().then((permission) => {
+        var options = {
+          body: "The leader",
+          icon: "https://avatars.githubusercontent.com/u/97792702?v=4    auto=compress&cs=tinysrgb&dpr=1&w=500",
+          dir: "rtl",
+        };
         if (permission === "granted") {
-          const newNotification = new Notification("Hello World!", {
-            body: "This is a notification created using React",
-          });
+          const newNotification = new Notification("Hello World!", options);
           setNotification(newNotification);
           setShowNotification(true);
         }
