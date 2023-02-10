@@ -114,12 +114,12 @@
 
 // export default App;
 import React, { useState } from "react";
-
 const App = () => {
   const [showNotification, setShowNotification] = useState(false);
   const [notificationMessage, setNotificationMessage] =
     useState("Hello World!");
 
+  console.log("");
   const handleShowNotification = () => {
     if (!("serviceWorker" in navigator)) {
       return;
