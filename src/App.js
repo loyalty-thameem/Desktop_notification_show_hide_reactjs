@@ -131,8 +131,24 @@ const App = () => {
         icon: "https://avatars.githubusercontent.com/u/97792702?v=4    auto=compress&cs=tinysrgb&dpr=1&w=500",
       });
       setShowNotification(true);
+      console.log(registration);
     });
   };
+
+  // function showNotification() {
+  //   Notification.requestPermission((result) => {
+  //     if (result === "granted") {
+  //       navigator.serviceWorker.ready.then((registration) => {
+  //         registration.showNotification("Vibration Sample", {
+  //           body: "Buzz! Buzz!",
+  //           icon: "../images/touch/chrome-touch-icon-192x192.png",
+  //           vibrate: [200, 100, 200, 100, 200, 100, 200],
+  //           tag: "vibration-sample",
+  //         });
+  //       });
+  //     }
+  //   });
+  // }
 
   const handleHideNotification = () => {
     setShowNotification(false);
