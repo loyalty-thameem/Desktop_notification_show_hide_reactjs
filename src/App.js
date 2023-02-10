@@ -113,26 +113,22 @@
 // };
 
 // export default App;
-
 import React, { useState } from "react";
 
-const DesktopNotification = () => {
+const App = () => {
   const [showNotification, setShowNotification] = useState(false);
+  const [notificationMessage, setNotificationMessage] =
+    useState("Hello World!");
 
   const handleShowNotification = () => {
     if (!("serviceWorker" in navigator)) {
-      console.log("serviceWorker", navigator);
       return;
     }
 
     navigator.serviceWorker.ready.then((registration) => {
-      console.log("serviceWorker", registration);
-      registration.showNotification("Thameem ansari!", {
-        body: "I'm Leader",
+      registration.showNotification(notificationMessage, {
+        body: "This is a notification created using React and a Service Worker",
         icon: "https://avatars.githubusercontent.com/u/97792702?v=4    auto=compress&cs=tinysrgb&dpr=1&w=500",
-        dir: "ltr",
-        image: "https://wallpaperaccess.com/full/3225964.jpg",
-        data: { id: 1, name: "Thameem", lastName: "ansari" },
       });
       setShowNotification(true);
     });
@@ -142,16 +138,26 @@ const DesktopNotification = () => {
     setShowNotification(false);
   };
 
+  const handleUpdateNotification = () => {
+    setNotificationMessage("This is an updated message");
+  };
+
   return (
     <div>
       {!showNotification && (
         <button onClick={handleShowNotification}> Show Notification </button>
       )}
       {showNotification && (
-        <button onClick={handleHideNotification}> Hide Notification </button>
+        <>
+          <button onClick={handleUpdateNotification}>
+            {" "}
+            Update Notification{" "}
+          </button>
+          <button onClick={handleHideNotification}> Hide Notification </button>
+        </>
       )}
     </div>
   );
 };
 
-export default DesktopNotification;
+export default App;
