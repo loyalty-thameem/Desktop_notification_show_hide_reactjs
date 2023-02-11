@@ -129,11 +129,22 @@ const App = () => {
       registration.showNotification(notificationMessage, {
         body: "This is a notification created using React and a Service Worker",
         icon: "https://avatars.githubusercontent.com/u/97792702?v=4    auto=compress&cs=tinysrgb&dpr=1&w=500",
+        actions: [
+          { action: "yes", title: "Approvel" },
+          { action: "no", title: "Rejected" },
+        ],
       });
+      // registration.unregister().then((boolean) => {
+      //   // if boolean = true, unregister is successful
+      //   console.log("boolean", boolean);
+      // });
+
       setShowNotification(true);
-      console.log(registration);
+      //console.log(registration);
     });
   };
+
+  // export default App;
 
   // function showNotification() {
   //   Notification.requestPermission((result) => {
